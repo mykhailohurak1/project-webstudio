@@ -1,0 +1,142 @@
+.header {
+  border-bottom: 1px solid #ececec;
+  background-color: $color-main;
+}
+
+.header__container {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__logo-menu {
+  display: flex;
+  align-items: center;
+}
+
+//  TABLET-DESKTOP меню Студія-Портфоліо-Контакти
+.menu {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-left: 88px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 93px;
+  }
+}
+
+.menu__item {
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.menu__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: $color-headline;
+  position: relative;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+}
+
+.menu__link--current {
+  color: $color-accent;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: $color-accent;
+    position: absolute;
+    bottom: -1%;
+    display: block;
+    border-radius: 2px;
+  }
+}
+
+//  TABLET-DESKTOP контакти Пошта-Телефон
+.contacts {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: auto;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contacts__item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+}
+
+.contacts__link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: $color-text;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+  }
+}
+
+.contacts__icon-mail {
+  width: 14px;
+  height: 10px;
+  margin-right: 10px;
+  fill: currentColor;
+  @media screen and (min-width: 1200px) {
+    width: 16px;
+    height: 12px;
+  }
+}
+
+.contacts__icon-tel {
+  width: 10px;
+  height: 14px;
+  margin-right: 10px;
+  fill: currentColor;
+  @media screen and (min-width: 1200px) {
+    height: 16px;
+  }
+}

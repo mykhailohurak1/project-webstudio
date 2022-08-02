@@ -1,0 +1,192 @@
+//  Кнопка 'OPEN' ----------------------------------
+.mobile-menu__button-open {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  &:focus {
+    fill: ($color-accent);
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+//  Кнопка 'CLOSE' ----------------------------------
+.mobile-menu__button-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover,
+  &:focus {
+    fill: $color-accent;
+    cursor: pointer;
+  }
+}
+
+//  Контейнер 'MOBILE MENU' ----------------------------------
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: translateX(100%);
+  transition: transform 250ms linear;
+  padding: 48px 40px;
+  &.is-open {
+    transform: translateX(0);
+  }
+  @media (max-width: 439px) {
+    padding: 30px 30px;
+  }
+}
+
+// Блок 'СТУДІЯ-ПОРТФОЛІО-КОНТАКТИ' -------------------------
+.mob-menu__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+.mob-menu__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+  color: #212121;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+}
+.mob-menu__link--current {
+  color: $color-accent;
+}
+
+// Блок 'ТЕЛЕФОН-ПОШТА' ---------------------------------
+.mob-contacts__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.mob-contacts__link {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: $color-accent;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+  @media (max-width: 439px) {
+    font-size: 28px;
+  }
+  &--mail-font {
+    font-size: 24px;
+    color: $color-text;
+  }
+}
+
+// Блок 'СОЦ МЕРЕЖІ' --------------------------------------
+.mob-social {
+  display: none;
+  @media screen and (min-width: 440px) {
+    display: flex;
+    margin-top: 64px;
+  }
+}
+
+.mob-social__item {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.mob-social__link {
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: ($color-accent);
+  .mob-social__item:not(:last-child) &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 22px;
+    margin-left: 10px;
+    background-color: rgba(33, 33, 33, 0.2);
+  }
+}
+
+@media (max-width: 439px) {
+  .mobile-social {
+    display: flex;
+    margin-top: 32px;
+  }
+
+  .mobile-social__item {
+    width: 44px;
+    height: 44px;
+    & + & {
+      margin-left: 10px;
+    }
+  }
+
+  .mobile-social__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $color-accent;
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus,
+    &:hover {
+      background-color: $color-accent;
+      color: $color-head;
+    }
+  }
+
+  .mobile-social__logo {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+}
+
+.mobile-social {
+  @media screen and (min-width: 440px) {
+    display: none;
+  }
+}
